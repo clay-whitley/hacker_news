@@ -1,0 +1,15 @@
+<form action="/comments" method="post">
+  <input type='text' name="comment[content]" placeholder="Content">
+  <input type='hidden' name="comment[post_id]" value=<%= @post.id %>>
+  <input type='submit' value='Submit Comment'>
+</form>
+
+<ul>
+<% @comments.each do |comment| %>
+  <% user = User.find(comment.user_id) %>
+  <li>
+    <%= comment.content %>
+    <a href=<%= "/users/#{user.id}" %>><%= user.username %></a>
+  </li>
+<% end %>
+</ul>

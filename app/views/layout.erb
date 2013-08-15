@@ -18,6 +18,16 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <nav>
+    <div class="container">
+      <a href="/"> Home </a>
+      <a href="/login"> Login/Create user </a>
+      <a href="/posts/new">Create new post</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Hacker News Clone!</h1>
+    <%= yield %>
+  </div>
 </body>
 </html>
